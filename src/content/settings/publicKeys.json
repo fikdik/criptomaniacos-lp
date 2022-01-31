@@ -1,0 +1,13 @@
+{
+  "cloudinary": {
+    "cloud_name": "",
+    "api_key": ""
+  },
+  "uploadcare": {
+    "publicKey": ""
+  },
+  "gtag": "G-G4QQZ80677",
+  "tawkto": "",
+  "fbPixel": "",
+  "gTagManager": "GTM-5FTSMSM"
+}
