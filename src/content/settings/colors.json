@@ -1,0 +1,13 @@
+{
+  "colors": [
+    {
+      "colors": [
+        "#ffdd33"
+      ],
+      "label": "red",
+      "colorsRefs": [
+        "red.0"
+      ]
+    }
+  ]
+}

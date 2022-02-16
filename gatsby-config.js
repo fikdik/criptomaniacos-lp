@@ -1,8 +1,22 @@
-// const path = require('path');
+const path = require('path');
 const siteMetadata = require('./src/content/settings/siteMetadata.json');
 const publicKeys = require('./src/content/settings/publicKeys.json');
 
-let plugins = [`gatsby-plugin-netlify`, 'gatsby-plugin-netlify-cms'];
+let plugins = [
+  `gatsby-plugin-netlify`,
+  {
+    resolve: `gatsby-plugin-netlify-cms`,
+    options: {
+      manualInit: true,
+      modulePath: path.join(__dirname, `src`, `cms`, `index.js`),
+      // stylesPath: path.join(__dirname, `src`, `cms`, `admin.css`),
+      // enableIdentityWidget: true, // Netlify identity
+      publicPath: `_admin`,
+      htmlTitle: `${siteMetadata.title} CMS Panel`,
+      // htmlFavicon: `/icons/64x64.png`,
+    },
+  },
+];
 
 if (process.env.NODE !== 'development') {
   plugins.push({
@@ -46,12 +60,6 @@ plugins.push(
     },
     __key: 'pages',
   }
-);
-
-console.log(
-  `**************************************************  ${JSON.stringify(
-    plugins
-  )}   ******************************************* ${process.env.NODE} *******`
 );
 
 module.exports = {
