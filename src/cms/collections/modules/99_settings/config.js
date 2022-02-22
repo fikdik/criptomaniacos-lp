@@ -1,12 +1,12 @@
-const reqFields = require.context('./fields', true, /\.js$/);
+const reqFields = require.context('./files', true, /\.js$/);
 const paths = reqFields.keys();
 
-const fields = paths.map((path) => reqFields(path).default);
+const files = paths.map((path) => reqFields(path).default);
 
 const config = {
   label: 'Settings',
   name: 'settings',
-  files: fields,
+  files,
 };
 
 export default config;
